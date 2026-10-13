@@ -1,0 +1,23 @@
+edges:
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/parallel-ai/blob/main/openapi/parallel-chat-api-beta-api-openapi.yml#L271
+  contract_reference:
+    repo: parallel-ai
+    spec_file: parallel-chat-api-beta-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'parallel-ai declares OpenAI compatibility: ''description: The response format to use for chat completions.
+      OpenAI compatible.'''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-13'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
+generated: '2026-10-13'
+method: searched
+checked: []
