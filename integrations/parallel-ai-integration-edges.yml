@@ -1,36 +1,4 @@
 edges:
-- partner_name: MCP Registry
-  partner: mcp
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=ai.parallel
-  contract_reference:
-    register: registry.modelcontextprotocol.io
-    spec_file: null
-    role: mcp-server-listing
-    registered_name: ai.parallel/search-mcp
-    register_id: ai.parallel/search-mcp
-    detected_by: sweep-agent-tools.py
-    detected: '2026-10-14'
-  mcp_registry:
-    servers:
-    - ai.parallel/search-mcp
-    - ai.parallel/task-mcp
-    hosted_remote: 2
-    local_package: 0
-    transports:
-      streamable-http: 2
-    auth_declared: 0
-    catalog_declared: true
-    namespace_domains:
-    - parallel.ai
-  matched_by:
-  - namespace-domain
-  detected_by: sweep-agent-tools.py
-  first_seen: '2026-10-14'
 - partner_name: Stripe (own)
   partner: stripe
   partner_match: mirror
@@ -67,9 +35,74 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
+- partner_name: MCP Registry
+  partner: mcp
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://registry.modelcontextprotocol.io/v0/servers?search=ai.parallel
+  contract_reference:
+    register: registry.modelcontextprotocol.io
+    spec_file: null
+    role: mcp-server-listing
+    registered_name: ai.parallel/search-mcp
+    register_id: ai.parallel/search-mcp
+    detected_by: sweep-agent-tools.py
+    detected: '2026-10-15'
+  mcp_registry:
+    servers:
+    - ai.parallel/search-mcp
+    - ai.parallel/task-mcp
+    hosted_remote: 2
+    local_package: 0
+    transports:
+      streamable-http: 2
+    auth_declared: 0
+    catalog_declared: true
+    namespace_domains:
+    - parallel.ai
+  matched_by:
+  - namespace-domain
+  detected_by: sweep-agent-tools.py
+  first_seen: '2026-10-14'
+- partner_name: A2A protocol (own Agent Card)
+  partner: null
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: A2A agent
+  evidence: https://api.parallel.ai/.well-known/agent-card.json
+  channel: provider-built
+  relationship: compatible
+  shape: a2a
+  evidence_kind: own-wellknown
+  degree: conformant
+  report_only: true
+  a2a_card:
+    grade: conformant
+    verdict: live
+    protocol_version: 0.3.0
+    deviations: []
+    card_subject: null
+  contract_reference:
+    register: provider's own /.well-known/agent-card.json
+    spec_file: null
+    standard: A2A
+    role: a2a-agent-card
+    registered_name: Parallel Deep Research
+    organization: Parallel
+    matched_domain: parallel.ai
+    matched_by: own-domain
+    detected_by: sweep-ai-agents.py
+    detected: '2026-10-15'
+  detected_by: sweep-ai-agents.py
+  first_seen: '2026-10-15'
 generated: '2026-10-13'
 method: searched
 checked:
+- https://a2aregistry.org/api/agents
 - https://registry.modelcontextprotocol.io/v0/servers
 - stripe/integrations/stripe-integration-edges.yml
 source:
