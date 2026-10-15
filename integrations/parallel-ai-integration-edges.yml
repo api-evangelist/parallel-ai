@@ -1,23 +1,4 @@
 edges:
-- partner_name: OpenAI
-  partner: openai
-  partner_match: domain
-  type: contract
-  channel: provider-built
-  relationship: compatible
-  direction: provider-built
-  evidence: https://github.com/api-evangelist/parallel-ai/blob/main/openapi/parallel-chat-api-beta-api-openapi.yml#L271
-  contract_reference:
-    repo: parallel-ai
-    spec_file: parallel-chat-api-beta-api-openapi.yml
-    property: description
-    value: OpenAI-compatible
-    note: 'parallel-ai declares OpenAI compatibility: ''description: The response format to use for chat completions.
-      OpenAI compatible.'''
-    detected_by: sweep-model-routing.py
-    detected: '2026-10-13'
-  detected_by: sweep-model-routing.py
-  first_seen: '2026-10-13'
 - partner_name: MCP Registry
   partner: mcp
   partner_match: register
@@ -50,7 +31,46 @@ edges:
   - namespace-domain
   detected_by: sweep-agent-tools.py
   first_seen: '2026-10-14'
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/parallel
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - Parallel
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: developer_tools
+- partner_name: OpenAI
+  partner: openai
+  partner_match: domain
+  type: contract
+  channel: provider-built
+  relationship: compatible
+  direction: provider-built
+  evidence: https://github.com/api-evangelist/parallel-ai/blob/main/openapi/parallel-chat-api-beta-api-openapi.yml#L271
+  contract_reference:
+    repo: parallel-ai
+    spec_file: parallel-chat-api-beta-api-openapi.yml
+    property: description
+    value: OpenAI-compatible
+    note: 'parallel-ai declares OpenAI compatibility: ''description: The response format to use for chat completions.
+      OpenAI compatible.'''
+    detected_by: sweep-model-routing.py
+    detected: '2026-10-15'
+  detected_by: sweep-model-routing.py
+  first_seen: '2026-10-13'
 generated: '2026-10-13'
 method: searched
 checked:
 - https://registry.modelcontextprotocol.io/v0/servers
+- stripe/integrations/stripe-integration-edges.yml
+source:
+- stripe/integrations/stripe-integration-edges.yml
