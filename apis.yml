@@ -102,7 +102,7 @@ apis:
   - Chat API (Beta)
   properties:
   - type: OpenAPI
-    url: openapi/parallel-chat-api-beta-api-openapi.yml
+    url: openapi/parallel-ai-chat-api-beta-api-openapi.yml
   - type: Documentation
     url: https://docs.parallel.ai/home
   - type: APIReference
@@ -111,6 +111,10 @@ apis:
     url: https://docs.parallel.ai/getting-started/overview
   - type: Authentication
     url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
 - aid: parallel-ai:parallel-ai-extract-api
   name: Parallel Extract API
   description: >-
@@ -125,7 +129,7 @@ apis:
   - Extract
   properties:
   - type: OpenAPI
-    url: openapi/parallel-extract-api-openapi.yml
+    url: openapi/parallel-ai-extract-api-openapi.yml
   - type: Documentation
     url: https://docs.parallel.ai/home
   - type: APIReference
@@ -134,8 +138,12 @@ apis:
     url: https://docs.parallel.ai/getting-started/overview
   - type: Authentication
     url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
 - aid: parallel-ai:parallel-ai-findall-api
-  name: Parallel FindAll API
+  name: Parallel Find All API
   description: >-
     The FindAll API discovers and evaluates entities that match complex criteria from natural language
     objectives. Submit a high-level goal and the service automatically generates structured match conditions,
@@ -148,7 +156,7 @@ apis:
   - FindAll
   properties:
   - type: OpenAPI
-    url: openapi/parallel-findall-api-openapi.yml
+    url: openapi/parallel-ai-findall-api-openapi.yml
   - type: Documentation
     url: https://docs.parallel.ai/home
   - type: APIReference
@@ -157,6 +165,34 @@ apis:
     url: https://docs.parallel.ai/getting-started/overview
   - type: Authentication
     url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
+- aid: parallel-ai:parallel-ai-memory-api
+  name: Parallel Memory API
+  description: >-
+    The Memory API retrieves and manages memories created by Tasks, Monitors, and FindAll runs. Memories
+    can be personal or isolated with a `memory_scope_key`.
+  humanURL: https://docs.parallel.ai/getting-started/overview
+  baseURL: https://api.parallel.ai
+  tags:
+  - Memory
+  properties:
+  - type: OpenAPI
+    url: openapi/parallel-ai-memory-api-openapi.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/home
+  - type: APIReference
+    url: https://docs.parallel.ai/api-reference
+  - type: GettingStarted
+    url: https://docs.parallel.ai/getting-started/overview
+  - type: Authentication
+    url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
 - aid: parallel-ai:parallel-ai-monitor-api
   name: Parallel Monitor API
   description: >-
@@ -172,12 +208,10 @@ apis:
   humanURL: https://docs.parallel.ai/getting-started/overview
   baseURL: https://api.parallel.ai
   tags:
-  - Monitors
-  tags_raw:
   - Monitor
   properties:
   - type: OpenAPI
-    url: openapi/parallel-monitor-api-openapi.yml
+    url: openapi/parallel-ai-monitor-api-openapi.yml
   - type: Documentation
     url: https://docs.parallel.ai/home
   - type: APIReference
@@ -186,93 +220,10 @@ apis:
     url: https://docs.parallel.ai/getting-started/overview
   - type: Authentication
     url: authentication/parallel-authentication.yml
-- aid: parallel-ai:parallel-ai-search-api
-  name: Parallel Search API
-  description: >-
-    Search returns ranked URLs with extended excerpts suitable for LLM consumption. Inputs are a natural-language
-    objective and optional keyword queries. Source policies allow including or excluding specific domains
-    and have configurable output sizes. The returned extended snippets contain dense, relevant information
-    from relevant pages.
-
-    - Result: ranked list with URL, title, and long text excerpts
-  humanURL: https://docs.parallel.ai/getting-started/overview
-  baseURL: https://api.parallel.ai
-  tags:
-  - Search
-  properties:
-  - type: OpenAPI
-    url: openapi/parallel-search-api-openapi.yml
-  - type: Documentation
-    url: https://docs.parallel.ai/home
-  - type: APIReference
-    url: https://docs.parallel.ai/api-reference
-  - type: GettingStarted
-    url: https://docs.parallel.ai/getting-started/overview
-  - type: Authentication
-    url: authentication/parallel-authentication.yml
-- aid: parallel-ai:parallel-ai-tasks-api
-  name: Parallel Tasks API
-  description: >-
-    The Task API executes web research and extraction tasks. Clients submit a natural-language objective
-    with an optional input schema; the service plans retrieval, fetches relevant URLs, and returns outputs
-    that conform to a provided or inferred JSON schema. Supports deep research style queries and can return
-    rich structured JSON outputs. Processors trade-off between cost, latency, and quality. Each processor
-    supports calibrated confidences.
-
-    - Output metadata: citations, excerpts, reasoning, and confidence per field
-
-
-    Task Groups enable batch execution of many independent Task runs with group-level monitoring and failure
-    handling.
-
-    - Submit hundreds or thousands of Tasks as a single group
-
-    - Observe group progress and receive results as they complete
-
-    - Real-time updates via Server-Sent Events (SSE)
-
-    - Add tasks to an existing group while it is running
-
-    - Group-level retry and error aggregation
-  humanURL: https://docs.parallel.ai/getting-started/overview
-  baseURL: https://api.parallel.ai
-  tags:
-  - Task
-  tags_raw:
-  - Tasks
-  properties:
-  - type: OpenAPI
-    url: openapi/parallel-tasks-api-openapi.yml
-  - type: Documentation
-    url: https://docs.parallel.ai/home
-  - type: APIReference
-    url: https://docs.parallel.ai/api-reference
-  - type: GettingStarted
-    url: https://docs.parallel.ai/getting-started/overview
-  - type: Authentication
-    url: authentication/parallel-authentication.yml
-- aid: parallel-ai:parallel-ai-memory-api
-  name: Parallel Memory API
-  description: >-
-    The Memory API lets agents search and reuse the results of past Task, Monitor and FindAll runs so
-    new research builds on work already done. It exposes retrieve, evict and clear operations over the
-    stored research corpus, turning repeated web research into a reusable, source-addressable memory rather
-    than a fresh crawl every time.
-  humanURL: https://docs.parallel.ai/resources/memory
-  baseURL: https://api.parallel.ai
-  tags:
-  - Memory
-  properties:
-  - type: OpenAPI
-    url: openapi/parallel-memory-api-openapi.yml
   - type: Documentation
     url: https://docs.parallel.ai/resources/memory
-  - type: APIReference
-    url: https://docs.parallel.ai/api-reference
-  - type: GettingStarted
-    url: https://docs.parallel.ai/getting-started/overview
-  - type: Authentication
-    url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
 - aid: parallel-ai:parallel-ai-responses-api-api
   name: Parallel Responses API
   description: >-
@@ -301,15 +252,90 @@ apis:
   - Responses API
   properties:
   - type: OpenAPI
-    url: openapi/parallel-responses-api-api-openapi.yml
+    url: openapi/parallel-ai-responses-api-api-openapi.yml
   - type: Documentation
-    url: https://docs.parallel.ai/responses-api/responses-quickstart
+    url: https://docs.parallel.ai/home
   - type: APIReference
     url: https://docs.parallel.ai/api-reference
   - type: GettingStarted
     url: https://docs.parallel.ai/getting-started/overview
   - type: Authentication
     url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
+- aid: parallel-ai:parallel-ai-search-api
+  name: Parallel Search API
+  description: >-
+    Search returns ranked URLs with extended excerpts suitable for LLM consumption. Inputs are a natural-language
+    objective and optional keyword queries. Source policies allow including or excluding specific domains
+    and have configurable output sizes. The returned extended snippets contain dense, relevant information
+    from relevant pages.
+
+    - Result: ranked list with URL, title, and long text excerpts
+  humanURL: https://docs.parallel.ai/getting-started/overview
+  baseURL: https://api.parallel.ai
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/parallel-ai-search-api-openapi.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/home
+  - type: APIReference
+    url: https://docs.parallel.ai/api-reference
+  - type: GettingStarted
+    url: https://docs.parallel.ai/getting-started/overview
+  - type: Authentication
+    url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
+- aid: parallel-ai:parallel-ai-tasks-api
+  name: Parallel Tasks API
+  description: >-
+    The Task API executes web research and extraction tasks. Clients submit a natural-language objective
+    with an optional input schema; the service plans retrieval, fetches relevant URLs, and returns outputs
+    that conform to a provided or inferred JSON schema. Supports deep research style queries and can return
+    rich structured JSON outputs. Processors trade-off between cost, latency, and quality. Each processor
+    supports calibrated confidences.
+
+    - Output metadata: citations, excerpts, reasoning, and confidence per field
+
+
+    Task Groups enable batch execution of many independent Task runs with group-level monitoring and failure
+    handling.
+
+    - Submit hundreds or thousands of Tasks as a single group
+
+    - Observe group progress and receive results as they complete
+
+    - Real-time updates via Server-Sent Events (SSE)
+
+    - Add tasks to an existing group while it is running
+
+    - Group-level retry and error aggregation
+  humanURL: https://docs.parallel.ai/getting-started/overview
+  baseURL: https://api.parallel.ai
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/parallel-ai-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/home
+  - type: APIReference
+    url: https://docs.parallel.ai/api-reference
+  - type: GettingStarted
+    url: https://docs.parallel.ai/getting-started/overview
+  - type: Authentication
+    url: authentication/parallel-authentication.yml
+  - type: Documentation
+    url: https://docs.parallel.ai/resources/memory
+  - type: Documentation
+    url: https://docs.parallel.ai/responses-api/responses-quickstart
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

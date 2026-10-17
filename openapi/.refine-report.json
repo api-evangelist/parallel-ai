@@ -1,9 +1,7 @@
 {
-  "provider": "parallel",
+  "provider": "parallel-ai",
   "sources": [
-    "_original/parallel-openapi-original.json"
-  ],
-  "outputs": [
+    "_original/parallel-openapi-original.json",
     "parallel-chat-api-beta-api-openapi.yml",
     "parallel-extract-api-openapi.yml",
     "parallel-findall-api-openapi.yml",
@@ -13,24 +11,43 @@
     "parallel-search-api-openapi.yml",
     "parallel-tasks-api-openapi.yml"
   ],
-  "archived": [],
+  "outputs": [
+    "parallel-ai-chat-api-beta-api-openapi.yml",
+    "parallel-ai-extract-api-openapi.yml",
+    "parallel-ai-findall-api-openapi.yml",
+    "parallel-ai-memory-api-openapi.yml",
+    "parallel-ai-monitor-api-openapi.yml",
+    "parallel-ai-responses-api-api-openapi.yml",
+    "parallel-ai-search-api-openapi.yml",
+    "parallel-ai-tasks-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/parallel-chat-api-beta-api-openapi.yml",
+    "archived openapi/parallel-extract-api-openapi.yml",
+    "archived openapi/parallel-findall-api-openapi.yml",
+    "archived openapi/parallel-memory-api-openapi.yml",
+    "archived openapi/parallel-monitor-api-openapi.yml",
+    "archived openapi/parallel-responses-api-api-openapi.yml",
+    "archived openapi/parallel-search-api-openapi.yml",
+    "archived openapi/parallel-tasks-api-openapi.yml"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
     "1 archived document(s) dropped as subsets of other archived documents",
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "parallel-openapi-original.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "tag 'Chat API (Beta)' spans 2 source specs (parallel-openapi-original.json, parallel-chat-api-beta-api-openapi.yml): per-path servers applied",
+    "tag 'Extract' spans 2 source specs (parallel-openapi-original.json, parallel-extract-api-openapi.yml): per-path servers applied",
+    "tag 'FindAll' spans 2 source specs (parallel-openapi-original.json, parallel-findall-api-openapi.yml): per-path servers applied",
+    "tag 'Memory' spans 2 source specs (parallel-openapi-original.json, parallel-memory-api-openapi.yml): per-path servers applied",
+    "tag 'Monitor' spans 2 source specs (parallel-openapi-original.json, parallel-monitor-api-openapi.yml): per-path servers applied",
+    "tag 'Responses API' spans 2 source specs (parallel-openapi-original.json, parallel-responses-api-api-openapi.yml): per-path servers applied",
+    "tag 'Search' spans 2 source specs (parallel-openapi-original.json, parallel-search-api-openapi.yml): per-path servers applied",
+    "tag 'Tasks' spans 2 source specs (parallel-openapi-original.json, parallel-tasks-api-openapi.yml): per-path servers applied",
+    "apis.yml register: written (+8 apis, 8 total)"
   ],
   "skipped": [
-    "_original/parallel-responses-api-openapi.yml: archived document superseded by a larger archived document",
-    "parallel-chat-api-beta-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-extract-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-findall-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-memory-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-monitor-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-responses-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "parallel-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "_original/parallel-responses-api-openapi.yml: archived document superseded by a larger archived document"
   ]
 }
