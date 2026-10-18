@@ -66,7 +66,6 @@ tags:
 - Web Monitoring
 - LLM Tools
 - A2A
-- Ai Ml
 - AI Agents
 - MCP
 - Agent Skills
@@ -208,6 +207,8 @@ apis:
   humanURL: https://docs.parallel.ai/getting-started/overview
   baseURL: https://api.parallel.ai
   tags:
+  - Monitors
+  tags_raw:
   - Monitor
   properties:
   - type: OpenAPI
@@ -320,6 +321,8 @@ apis:
   humanURL: https://docs.parallel.ai/getting-started/overview
   baseURL: https://api.parallel.ai
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
