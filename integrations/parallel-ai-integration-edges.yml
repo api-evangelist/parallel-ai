@@ -107,38 +107,6 @@ edges:
     detected: '2026-10-19'
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: n8n (n8n-community)
-  partner: n8n
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: n8n-community
-  evidence: https://www.npmjs.com/package/n8n-nodes-parallel
-  mirror_of: n8n/integrations/n8n-integration-edges.yml
-  apps: []
-  listing_count: 1
-  detected: '2026-10-19'
-  detected_by: mirror-platform-listings.py
-- partner_name: Stripe (own)
-  partner: stripe
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.stripe.com/apps/parallel
-  mirror_of: stripe/integrations/stripe-integration-edges.yml
-  apps:
-  - Parallel
-  listing_count: 1
-  detected: '2026-10-15'
-  detected_by: mirror-platform-listings.py
-  category: developer_tools
 - partner_name: Agent Skills (own GitHub org)
   partner: null
   partner_match: register
@@ -290,6 +258,56 @@ edges:
     sector: aiml
   detected_by: sweep-vc-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: n8n (n8n-community)
+  partner: n8n
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: n8n-community
+  evidence: https://www.npmjs.com/package/n8n-nodes-parallel
+  mirror_of: n8n/integrations/n8n-integration-edges.yml
+  apps: []
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+- partner_name: Stripe (own)
+  partner: stripe
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.stripe.com/apps/parallel
+  mirror_of: stripe/integrations/stripe-integration-edges.yml
+  apps:
+  - Parallel
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  category: developer_tools
+- partner_name: Vercel (own)
+  partner: vercel
+  partner_match: mirror
+  mirror_match: domain+verified
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://vercel.com/marketplace/parallel
+  mirror_of: vercel/integrations/vercel-integration-edges.yml
+  apps:
+  - Parallel Web Systems
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: Agents Searching
+  partner_tier: native
 generated: '2026-10-13'
 method: searched
 checked:
@@ -317,5 +335,6 @@ checked:
 - https://www.indexventures.com/companies/
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
+- vercel/integrations/vercel-integration-edges.yml
 source:
 - stripe/integrations/stripe-integration-edges.yml
