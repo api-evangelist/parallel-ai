@@ -1634,3 +1634,9 @@ components:
 x-refined-from:
 - parallel-openapi-original.json
 - parallel-monitor-api-openapi.yml
+x-provenance:
+  method: harvested
+  publisher: Parallel
+  source: https://docs.parallel.ai/public-openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
